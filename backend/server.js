@@ -116,8 +116,8 @@ io.on('connection', (socket) => {
 
 const PORT = process.env.PORT || 3002;
 
-server.listen(PORT, () => {
-  console.log(`🚀 TENKAP BACKEND STARTED on PORT ${PORT}`);
+server.listen(PORT, '0.0.0.0', () => {
+  console.log(`🚀 TENKAP BACKEND PUBLICLY STARTED on PORT ${PORT}`);
 });
 
 module.exports = { app, db, memoryCache, io };
