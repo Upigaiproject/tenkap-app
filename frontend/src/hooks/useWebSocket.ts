@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { io, Socket } from 'socket.io-client';
 
+import { API_URL } from '../config/api';
+
 // Singleton socket instance to avoid multiple connections
 let socketInstance: Socket | null = null;
 
@@ -9,8 +11,8 @@ export const useWebSocket = () => {
 
     useEffect(() => {
         if (!socketInstance) {
-            // Use relative path - Vite proxy handles the rest
-            socketInstance = io('/', {
+            // Use centralized API URL
+            socketInstance = io(API_URL, {
                 path: '/socket.io',
                 transports: ['websocket'],
                 autoConnect: true
