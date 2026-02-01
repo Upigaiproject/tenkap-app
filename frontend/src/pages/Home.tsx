@@ -116,7 +116,7 @@ const Home = () => {
             const userId = localStorage.getItem('userId');
             if (!userId) return;
 
-            await fetch(`${API_URL} /api/tracking / log - coordinate`, {
+            await fetch(`${API_URL}/api/tracking/log-coordinate`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -144,7 +144,7 @@ const Home = () => {
         try {
             const userId = localStorage.getItem('userId') || 'user_dev_123';
 
-            const response = await fetch(`${API_URL} /api/checkin`, {
+            const response = await fetch(`${API_URL}/api/checkin`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -173,7 +173,7 @@ const Home = () => {
     const handleCheckOut = async () => {
         try {
             const userId = localStorage.getItem('userId') || 'user_dev_123';
-            await fetch(`${API_URL} /api/checkin / checkout`, {
+            await fetch(`${API_URL}/api/checkin/checkout`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ userId })
@@ -290,7 +290,6 @@ const Home = () => {
                     </div>
                 </div>
 
-                {/* FIXED NOTIFICATION BELL - WORLD CLASS DESIGN */}
                 {/* FIXED NOTIFICATION BELL - WORLD CLASS DESIGN */}
                 <NotificationBell />
 
