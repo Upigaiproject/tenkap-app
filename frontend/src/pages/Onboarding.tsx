@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Phone, Mail, ChevronRight, Loader } from 'lucide-react';
+import { Mail, ChevronRight, Loader } from 'lucide-react';
 import PhoneVerificationStep from '../components/PhoneVerificationStep';
 
 const Onboarding = ({ onComplete }: { onComplete: () => void }) => {
@@ -12,7 +12,7 @@ const Onboarding = ({ onComplete }: { onComplete: () => void }) => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
-    const [verificationCode, setVerificationCode] = useState('');
+
     const [isPhoneVerified, setIsPhoneVerified] = useState(false);
 
     // Optional fields

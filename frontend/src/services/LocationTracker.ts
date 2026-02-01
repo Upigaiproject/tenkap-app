@@ -1,9 +1,9 @@
 import { useStore } from '../store/useStore';
-import axios from 'axios';
+
 
 class LocationTracker {
     private watchId: number | null = null;
-    private lastKnownPosition: GeolocationCoordinates | null = null;
+
     private isTracking: boolean = false;
 
     constructor() {
@@ -61,7 +61,7 @@ class LocationTracker {
             timestamp: new Date().toISOString()
         });
 
-        this.lastKnownPosition = position.coords;
+
     }
 
     private handleError(error: GeolocationPositionError) {

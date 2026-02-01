@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Clock, User, TrendingUp, Sparkles, X, Check } from 'lucide-react';
+import { MapPin, Clock, User, TrendingUp, Sparkles } from 'lucide-react';
 
 interface Suggestion {
     id: string;
@@ -35,16 +35,7 @@ const SuggestionCard: React.FC<SuggestionCardProps> = ({
         }
     };
 
-    const getGradient = () => {
-        const gradients = {
-            location: 'from-blue-500 to-cyan-500',
-            proximity: 'from-blue-500 to-cyan-500',
-            timing: 'from-purple-500 to-pink-500',
-            person: 'from-orange-500 to-red-500',
-            category: 'from-green-500 to-emerald-500'
-        };
-        return gradients[suggestion.type] || 'from-gray-500 to-gray-600';
-    };
+
 
     return (
         <div style={{
