@@ -8,8 +8,7 @@ const PhoneVerificationStep: React.FC<{ onVerified: (phone: string) => void }> =
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 
-    const backendUrl = 'http://localhost:3002'; // Updated to 3002 to match server.js
-
+    const backendUrl = import.meta.env.VITE_API_URL || 'http://localhost:3002';
     const handleSendCode = async () => {
         setLoading(true);
         setError('');
