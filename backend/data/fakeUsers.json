@@ -1,0 +1,902 @@
+[
+  {
+    "id": "fake_user_1769872460538_0",
+    "name": "Barış",
+    "age": 27,
+    "gender": "non-binary",
+    "bio": "Gece 2'de lokma yiyelim mi diye soracak birini arıyorum 🌃",
+    "interests": [
+      "Gezi",
+      "Yoga",
+      "Podcast"
+    ],
+    "photos": [
+      "https://i.pravatar.cc/400?img=64",
+      "https://i.pravatar.cc/400?img=65",
+      "https://i.pravatar.cc/400?img=66"
+    ],
+    "location": {
+      "latitude": 41.02677218367418,
+      "longitude": 29.01200390946239,
+      "district": "Üsküdar",
+      "place_name": "Kız Kulesi"
+    },
+    "match_score": 0.65,
+    "distance_meters": 231,
+    "last_active": "2026-01-31T07:14:20.538Z",
+    "is_online": true,
+    "profile_completion": 0.88,
+    "created_at": "2026-01-31T15:14:20.539Z"
+  },
+  {
+    "id": "fake_user_1769872460539_1",
+    "name": "Defne",
+    "age": 27,
+    "gender": "female",
+    "bio": "Mimarlık & sanat 🎨 Hafta sonu galeri gezmeye ne dersin?",
+    "interests": [
+      "Piyano",
+      "Teknoloji",
+      "Koşu",
+      "Sinema",
+      "Yüzme"
+    ],
+    "photos": [
+      "https://i.pravatar.cc/400?img=52",
+      "https://i.pravatar.cc/400?img=53",
+      "https://i.pravatar.cc/400?img=54"
+    ],
+    "location": {
+      "latitude": 40.981409385999115,
+      "longitude": 29.04610406077396,
+      "district": "Acıbadem",
+      "place_name": "Acıbadem Parkı"
+    },
+    "match_score": 0.78,
+    "distance_meters": 1995,
+    "last_active": "2026-01-29T17:14:20.539Z",
+    "is_online": false,
+    "profile_completion": 0.87,
+    "created_at": "2026-01-31T15:14:20.539Z"
+  },
+  {
+    "id": "fake_user_1769872460539_2",
+    "name": "Can",
+    "age": 37,
+    "gender": "male",
+    "bio": "Brunch yapılmaz, yaşanır 🥂 Kadıköy'ün en iyi mekanlarını bilirim",
+    "interests": [
+      "Piyano",
+      "Yazılım",
+      "Yürüyüş"
+    ],
+    "photos": [
+      "https://i.pravatar.cc/400?img=22",
+      "https://i.pravatar.cc/400?img=23",
+      "https://i.pravatar.cc/400?img=24"
+    ],
+    "location": {
+      "latitude": 40.993393125252275,
+      "longitude": 29.022371342770416,
+      "district": "Kadıköy",
+      "place_name": "Kadıköy Çarşı"
+    },
+    "match_score": 0.71,
+    "distance_meters": 3469,
+    "last_active": "2026-01-31T08:14:20.539Z",
+    "is_online": false,
+    "profile_completion": 0.84,
+    "created_at": "2026-01-31T15:14:20.539Z"
+  },
+  {
+    "id": "fake_user_1769872460539_3",
+    "name": "Utku",
+    "age": 26,
+    "gender": "male",
+    "bio": "Köpeklerle aram iyi 🐕 Seninkiyle tanışalım",
+    "interests": [
+      "Bisiklet",
+      "Konser",
+      "Yürüyüş",
+      "Yazılım"
+    ],
+    "photos": [
+      "https://i.pravatar.cc/400?img=27",
+      "https://i.pravatar.cc/400?img=28",
+      "https://i.pravatar.cc/400?img=29"
+    ],
+    "location": {
+      "latitude": 41.06219436361756,
+      "longitude": 28.985497356155754,
+      "district": "Şişli",
+      "place_name": "Cevahir AVM"
+    },
+    "match_score": 0.74,
+    "distance_meters": 1413,
+    "last_active": "2026-01-31T14:14:20.539Z",
+    "is_online": false,
+    "profile_completion": 0.84,
+    "created_at": "2026-01-31T15:14:20.539Z"
+  },
+  {
+    "id": "fake_user_1769872460539_4",
+    "name": "Efe",
+    "age": 30,
+    "gender": "male",
+    "bio": "Fotoğraf çekmeyi seviyorum 📸 En iyi günbatımını gösteririm",
+    "interests": [
+      "Müzik",
+      "Yazılım",
+      "Mutfak",
+      "Koşu"
+    ],
+    "photos": [
+      "https://i.pravatar.cc/400?img=15",
+      "https://i.pravatar.cc/400?img=16",
+      "https://i.pravatar.cc/400?img=17"
+    ],
+    "location": {
+      "latitude": 40.97944017168842,
+      "longitude": 29.030643727075873,
+      "district": "Moda",
+      "place_name": "Moda Sahili"
+    },
+    "match_score": 0.7,
+    "distance_meters": 2877,
+    "last_active": "2026-01-30T02:14:20.539Z",
+    "is_online": false,
+    "profile_completion": 0.79,
+    "created_at": "2026-01-31T15:14:20.539Z"
+  },
+  {
+    "id": "fake_user_1769872460539_5",
+    "name": "Tolga",
+    "age": 24,
+    "gender": "male",
+    "bio": "Finans & fitness. Hem mental hem physical 💪📈",
+    "interests": [
+      "Müzik",
+      "Koşu",
+      "Bisiklet",
+      "Tasarım",
+      "Satranç"
+    ],
+    "photos": [
+      "https://i.pravatar.cc/400?img=60",
+      "https://i.pravatar.cc/400?img=61",
+      "https://i.pravatar.cc/400?img=62"
+    ],
+    "location": {
+      "latitude": 41.04269944464285,
+      "longitude": 28.98989137139731,
+      "district": "Nişantaşı",
+      "place_name": "City's Nişantaşı"
+    },
+    "match_score": 0.81,
+    "distance_meters": 514,
+    "last_active": "2026-01-31T15:14:20.539Z",
+    "is_online": false,
+    "profile_completion": 0.83,
+    "created_at": "2026-01-31T15:14:20.539Z"
+  },
+  {
+    "id": "fake_user_1769872460539_6",
+    "name": "Emir",
+    "age": 36,
+    "gender": "male",
+    "bio": "Netflix'te ne izleyelim tartışmasını bitirmek için buradayım",
+    "interests": [
+      "Yüzme",
+      "Koşu",
+      "Veganlık"
+    ],
+    "photos": [
+      "https://i.pravatar.cc/400?img=47",
+      "https://i.pravatar.cc/400?img=48",
+      "https://i.pravatar.cc/400?img=49"
+    ],
+    "location": {
+      "latitude": 40.987885921795844,
+      "longitude": 29.02671329693505,
+      "district": "Kadıköy",
+      "place_name": "Kadıköy Çarşı"
+    },
+    "match_score": 0.8,
+    "distance_meters": 430,
+    "last_active": "2026-01-31T11:14:20.539Z",
+    "is_online": false,
+    "profile_completion": 0.77,
+    "created_at": "2026-01-31T15:14:20.539Z"
+  },
+  {
+    "id": "fake_user_1769872460539_7",
+    "name": "Yasemin",
+    "age": 35,
+    "gender": "female",
+    "bio": "Yoga, kitap, sinema. Klasik ama işe yarıyor 🧘♀️",
+    "interests": [
+      "Kamp",
+      "Gezi",
+      "Kahve",
+      "Festival"
+    ],
+    "photos": [
+      "https://i.pravatar.cc/400?img=38",
+      "https://i.pravatar.cc/400?img=39",
+      "https://i.pravatar.cc/400?img=40"
+    ],
+    "location": {
+      "latitude": 40.98269690269028,
+      "longitude": 29.033689539936884,
+      "district": "Moda",
+      "place_name": "Moda Sahili"
+    },
+    "match_score": 0.76,
+    "distance_meters": 1380,
+    "last_active": "2026-01-30T10:14:20.539Z",
+    "is_online": false,
+    "profile_completion": 0.85,
+    "created_at": "2026-01-31T15:14:20.539Z"
+  },
+  {
+    "id": "fake_user_1769872460539_8",
+    "name": "Deniz",
+    "age": 29,
+    "gender": "male",
+    "bio": "Kötü şarkı sözlerini ezberleme yeteneğim var 🎤",
+    "interests": [
+      "Müzik",
+      "Fotoğrafçılık",
+      "Yüzme"
+    ],
+    "photos": [
+      "https://i.pravatar.cc/400?img=66",
+      "https://i.pravatar.cc/400?img=67",
+      "https://i.pravatar.cc/400?img=68"
+    ],
+    "location": {
+      "latitude": 41.02766467557677,
+      "longitude": 28.981853484214213,
+      "district": "Cihangir",
+      "place_name": "Kahve 6"
+    },
+    "match_score": 0.66,
+    "distance_meters": 1845,
+    "last_active": "2026-01-30T12:14:20.539Z",
+    "is_online": false,
+    "profile_completion": 0.95,
+    "created_at": "2026-01-31T15:14:20.539Z"
+  },
+  {
+    "id": "fake_user_1769872460539_9",
+    "name": "Can",
+    "age": 22,
+    "gender": "male",
+    "bio": "Kötü şarkı sözlerini ezberleme yeteneğim var 🎤",
+    "interests": [
+      "Satranç",
+      "Edebiyat",
+      "Tasarım",
+      "Piyano"
+    ],
+    "photos": [
+      "https://i.pravatar.cc/400?img=63",
+      "https://i.pravatar.cc/400?img=64",
+      "https://i.pravatar.cc/400?img=65"
+    ],
+    "location": {
+      "latitude": 40.96419967284805,
+      "longitude": 29.09793281380588,
+      "district": "Suadiye",
+      "place_name": "Bağdat Caddesi"
+    },
+    "match_score": 0.81,
+    "distance_meters": 381,
+    "last_active": "2026-01-30T02:14:20.539Z",
+    "is_online": false,
+    "profile_completion": 0.95,
+    "created_at": "2026-01-31T15:14:20.539Z"
+  },
+  {
+    "id": "fake_user_1769872460539_10",
+    "name": "Can",
+    "age": 38,
+    "gender": "male",
+    "bio": "Gitar çalıyorum, şarkı yazıyorum 🎸 Indie rock severim",
+    "interests": [
+      "Konser",
+      "Sinema",
+      "Oyun"
+    ],
+    "photos": [
+      "https://i.pravatar.cc/400?img=69",
+      "https://i.pravatar.cc/400?img=70",
+      "https://i.pravatar.cc/400?img=71"
+    ],
+    "location": {
+      "latitude": 40.968493916651006,
+      "longitude": 29.09571507609306,
+      "district": "Suadiye",
+      "place_name": "Bağdat Caddesi"
+    },
+    "match_score": 0.71,
+    "distance_meters": 1161,
+    "last_active": "2026-01-30T00:14:20.539Z",
+    "is_online": true,
+    "profile_completion": 0.94,
+    "created_at": "2026-01-31T15:14:20.539Z"
+  },
+  {
+    "id": "fake_user_1769872460539_11",
+    "name": "Selin",
+    "age": 37,
+    "gender": "female",
+    "bio": "Plansız gidilenler hep daha eğlenceli oluyor 🎉",
+    "interests": [
+      "Yüzme",
+      "Sosyalleşme",
+      "Konser",
+      "Yoga"
+    ],
+    "photos": [
+      "https://i.pravatar.cc/400?img=3",
+      "https://i.pravatar.cc/400?img=4",
+      "https://i.pravatar.cc/400?img=5"
+    ],
+    "location": {
+      "latitude": 41.06307678835913,
+      "longitude": 28.985412336940275,
+      "district": "Şişli",
+      "place_name": "Cevahir AVM"
+    },
+    "match_score": 0.83,
+    "distance_meters": 1456,
+    "last_active": "2026-01-30T22:14:20.539Z",
+    "is_online": false,
+    "profile_completion": 0.88,
+    "created_at": "2026-01-31T15:14:20.539Z"
+  },
+  {
+    "id": "fake_user_1769872460539_12",
+    "name": "Alp",
+    "age": 37,
+    "gender": "male",
+    "bio": "Seyahat etmeyi, yeni yerler keşfetmeyi seviyorum ✈️ Bi kahve içelim?",
+    "interests": [
+      "Gastronomi",
+      "Brunch",
+      "Tasarım",
+      "Müzik",
+      "Girişimcilik"
+    ],
+    "photos": [
+      "https://i.pravatar.cc/400?img=44",
+      "https://i.pravatar.cc/400?img=45",
+      "https://i.pravatar.cc/400?img=46"
+    ],
+    "location": {
+      "latitude": 41.049683980048904,
+      "longitude": 28.991317830718533,
+      "district": "Nişantaşı",
+      "place_name": "City's Nişantaşı"
+    },
+    "match_score": 0.81,
+    "distance_meters": 134,
+    "last_active": "2026-01-30T23:14:20.539Z",
+    "is_online": false,
+    "profile_completion": 0.9,
+    "created_at": "2026-01-31T15:14:20.539Z"
+  },
+  {
+    "id": "fake_user_1769872460539_13",
+    "name": "Ozan",
+    "age": 34,
+    "gender": "male",
+    "bio": "Mutfakta deney yapmayı seviyorum. Deneme tahtası arıyorum 👨🍳",
+    "interests": [
+      "Müze",
+      "Yüzme",
+      "Kitap",
+      "Bisiklet",
+      "Brunch"
+    ],
+    "photos": [
+      "https://i.pravatar.cc/400?img=42",
+      "https://i.pravatar.cc/400?img=43",
+      "https://i.pravatar.cc/400?img=44"
+    ],
+    "location": {
+      "latitude": 40.98680962413103,
+      "longitude": 29.042865207973037,
+      "district": "Acıbadem",
+      "place_name": "Acıbadem Parkı"
+    },
+    "match_score": 0.61,
+    "distance_meters": 406,
+    "last_active": "2026-01-30T01:14:20.539Z",
+    "is_online": false,
+    "profile_completion": 0.91,
+    "created_at": "2026-01-31T15:14:20.539Z"
+  },
+  {
+    "id": "fake_user_1769872460539_14",
+    "name": "Efe",
+    "age": 27,
+    "gender": "male",
+    "bio": "Köpeklerle aram iyi 🐕 Seninkiyle tanışalım",
+    "interests": [
+      "Wine",
+      "Brunch",
+      "Yoga",
+      "Sanat"
+    ],
+    "photos": [
+      "https://i.pravatar.cc/400?img=18",
+      "https://i.pravatar.cc/400?img=19",
+      "https://i.pravatar.cc/400?img=20"
+    ],
+    "location": {
+      "latitude": 41.03835041834859,
+      "longitude": 29.005770617043634,
+      "district": "Beşiktaş",
+      "place_name": "Starbucks Beşiktaş"
+    },
+    "match_score": 0.79,
+    "distance_meters": 126,
+    "last_active": "2026-01-29T21:14:20.539Z",
+    "is_online": false,
+    "profile_completion": 0.91,
+    "created_at": "2026-01-31T15:14:20.539Z"
+  },
+  {
+    "id": "fake_user_1769872460539_15",
+    "name": "Ayşe",
+    "age": 37,
+    "gender": "female",
+    "bio": "Deniz > Dağ. Tartışmaya açık değilim 🌊",
+    "interests": [
+      "Mutfak",
+      "Seyahat",
+      "Yoga",
+      "Dil öğrenme"
+    ],
+    "photos": [
+      "https://i.pravatar.cc/400?img=5",
+      "https://i.pravatar.cc/400?img=6",
+      "https://i.pravatar.cc/400?img=7"
+    ],
+    "location": {
+      "latitude": 41.029509959448916,
+      "longitude": 28.97777571523075,
+      "district": "Galata",
+      "place_name": "Galata Kulesi"
+    },
+    "match_score": 0.75,
+    "distance_meters": 4481,
+    "last_active": "2026-01-30T20:14:20.539Z",
+    "is_online": false,
+    "profile_completion": 0.94,
+    "created_at": "2026-01-31T15:14:20.539Z"
+  },
+  {
+    "id": "fake_user_1769872460539_16",
+    "name": "Esra",
+    "age": 29,
+    "gender": "female",
+    "bio": "Plansız gidilenler hep daha eğlenceli oluyor 🎉",
+    "interests": [
+      "Müze",
+      "Teknoloji",
+      "Yüzme",
+      "Satranç"
+    ],
+    "photos": [
+      "https://i.pravatar.cc/400?img=4",
+      "https://i.pravatar.cc/400?img=5",
+      "https://i.pravatar.cc/400?img=6"
+    ],
+    "location": {
+      "latitude": 40.982580321140404,
+      "longitude": 29.036092087590216,
+      "district": "Moda",
+      "place_name": "Moda Sahili"
+    },
+    "match_score": 0.73,
+    "distance_meters": 793,
+    "last_active": "2026-01-30T02:14:20.539Z",
+    "is_online": false,
+    "profile_completion": 0.98,
+    "created_at": "2026-01-31T15:14:20.539Z"
+  },
+  {
+    "id": "fake_user_1769872460539_17",
+    "name": "Mert",
+    "age": 32,
+    "gender": "male",
+    "bio": "Netflix'te ne izleyelim tartışmasını bitirmek için buradayım",
+    "interests": [
+      "Veganlık",
+      "Sosyalleşme",
+      "Konser"
+    ],
+    "photos": [
+      "https://i.pravatar.cc/400?img=46",
+      "https://i.pravatar.cc/400?img=47",
+      "https://i.pravatar.cc/400?img=48"
+    ],
+    "location": {
+      "latitude": 41.020639007240405,
+      "longitude": 29.011888422971033,
+      "district": "Üsküdar",
+      "place_name": "Kız Kulesi"
+    },
+    "match_score": 0.79,
+    "distance_meters": 4322,
+    "last_active": "2026-01-31T04:14:20.539Z",
+    "is_online": false,
+    "profile_completion": 0.77,
+    "created_at": "2026-01-31T15:14:20.539Z"
+  },
+  {
+    "id": "fake_user_1769872460539_18",
+    "name": "Ebru",
+    "age": 25,
+    "gender": "female",
+    "bio": "Mimarlık & sanat 🎨 Hafta sonu galeri gezmeye ne dersin?",
+    "interests": [
+      "Yürüyüş",
+      "Veganlık",
+      "Fotoğrafçılık",
+      "Fitness",
+      "Mimarlık"
+    ],
+    "photos": [
+      "https://i.pravatar.cc/400?img=1",
+      "https://i.pravatar.cc/400?img=2",
+      "https://i.pravatar.cc/400?img=3"
+    ],
+    "location": {
+      "latitude": 41.026506737105514,
+      "longitude": 28.978950087193503,
+      "district": "Galata",
+      "place_name": "Galata Kulesi"
+    },
+    "match_score": 0.83,
+    "distance_meters": 527,
+    "last_active": "2026-01-30T06:14:20.539Z",
+    "is_online": false,
+    "profile_completion": 0.8,
+    "created_at": "2026-01-31T15:14:20.539Z"
+  },
+  {
+    "id": "fake_user_1769872460539_19",
+    "name": "Utku",
+    "age": 28,
+    "gender": "male",
+    "bio": "Köpeklerle aram iyi 🐕 Seninkiyle tanışalım",
+    "interests": [
+      "Mutfak",
+      "Mimarlık",
+      "Brunch",
+      "Dil öğrenme"
+    ],
+    "photos": [
+      "https://i.pravatar.cc/400?img=19",
+      "https://i.pravatar.cc/400?img=20",
+      "https://i.pravatar.cc/400?img=21"
+    ],
+    "location": {
+      "latitude": 41.06007959091954,
+      "longitude": 29.024316853700558,
+      "district": "Ortaköy",
+      "place_name": "Ortaköy Sahili"
+    },
+    "match_score": 0.76,
+    "distance_meters": 403,
+    "last_active": "2026-01-30T06:14:20.539Z",
+    "is_online": false,
+    "profile_completion": 0.92,
+    "created_at": "2026-01-31T15:14:20.539Z"
+  },
+  {
+    "id": "fake_user_1769872460539_20",
+    "name": "Utku",
+    "age": 34,
+    "gender": "male",
+    "bio": "Seyahat etmeyi, yeni yerler keşfetmeyi seviyorum ✈️ Bi kahve içelim?",
+    "interests": [
+      "Seyahat",
+      "Tasarım",
+      "Dans",
+      "Podcast"
+    ],
+    "photos": [
+      "https://i.pravatar.cc/400?img=43",
+      "https://i.pravatar.cc/400?img=44",
+      "https://i.pravatar.cc/400?img=45"
+    ],
+    "location": {
+      "latitude": 41.027780495185894,
+      "longitude": 28.982468925151476,
+      "district": "Cihangir",
+      "place_name": "Kahve 6"
+    },
+    "match_score": 0.72,
+    "distance_meters": 4766,
+    "last_active": "2026-01-29T18:14:20.539Z",
+    "is_online": false,
+    "profile_completion": 0.96,
+    "created_at": "2026-01-31T15:14:20.539Z"
+  },
+  {
+    "id": "fake_user_1769872460539_21",
+    "name": "Nil",
+    "age": 32,
+    "gender": "female",
+    "bio": "Brunch yapılmaz, yaşanır 🥂 Kadıköy'ün en iyi mekanlarını bilirim",
+    "interests": [
+      "Kitap",
+      "Konser",
+      "Sosyalleşme",
+      "Tasarım"
+    ],
+    "photos": [
+      "https://i.pravatar.cc/400?img=7",
+      "https://i.pravatar.cc/400?img=8",
+      "https://i.pravatar.cc/400?img=9"
+    ],
+    "location": {
+      "latitude": 41.02924774627583,
+      "longitude": 28.987762415377915,
+      "district": "Cihangir",
+      "place_name": "Kahve 6"
+    },
+    "match_score": 0.69,
+    "distance_meters": 580,
+    "last_active": "2026-01-29T20:14:20.539Z",
+    "is_online": false,
+    "profile_completion": 0.87,
+    "created_at": "2026-01-31T15:14:20.539Z"
+  },
+  {
+    "id": "fake_user_1769872460539_22",
+    "name": "Berk",
+    "age": 34,
+    "gender": "male",
+    "bio": "Hayat kısa, kahvesi uzun olsun ☕ Moda'da sunset?",
+    "interests": [
+      "Yüzme",
+      "Gastronomi",
+      "Kahve",
+      "Yürüyüş",
+      "Seyahat"
+    ],
+    "photos": [
+      "https://i.pravatar.cc/400?img=69",
+      "https://i.pravatar.cc/400?img=70",
+      "https://i.pravatar.cc/400?img=71"
+    ],
+    "location": {
+      "latitude": 40.98051721447223,
+      "longitude": 29.030362489953486,
+      "district": "Moda",
+      "place_name": "Moda Sahili"
+    },
+    "match_score": 0.69,
+    "distance_meters": 2187,
+    "last_active": "2026-01-31T14:14:20.539Z",
+    "is_online": false,
+    "profile_completion": 0.98,
+    "created_at": "2026-01-31T15:14:20.539Z"
+  },
+  {
+    "id": "fake_user_1769872460539_23",
+    "name": "Mert",
+    "age": 34,
+    "gender": "non-binary",
+    "bio": "Seyahat etmeyi, yeni yerler keşfetmeyi seviyorum ✈️ Bi kahve içelim?",
+    "interests": [
+      "Dans",
+      "Wine",
+      "Edebiyat",
+      "Fotoğrafçılık"
+    ],
+    "photos": [
+      "https://i.pravatar.cc/400?img=20",
+      "https://i.pravatar.cc/400?img=21",
+      "https://i.pravatar.cc/400?img=22"
+    ],
+    "location": {
+      "latitude": 41.0214807229863,
+      "longitude": 29.014213507159074,
+      "district": "Üsküdar",
+      "place_name": "Kız Kulesi"
+    },
+    "match_score": 0.63,
+    "distance_meters": 485,
+    "last_active": "2026-01-30T13:14:20.539Z",
+    "is_online": false,
+    "profile_completion": 0.79,
+    "created_at": "2026-01-31T15:14:20.539Z"
+  },
+  {
+    "id": "fake_user_1769872460539_24",
+    "name": "Serkan",
+    "age": 26,
+    "gender": "male",
+    "bio": "Hayat kısa, kahvesi uzun olsun ☕ Moda'da sunset?",
+    "interests": [
+      "Festival",
+      "Tiyatro",
+      "Konser",
+      "Brunch",
+      "Dans"
+    ],
+    "photos": [
+      "https://i.pravatar.cc/400?img=10",
+      "https://i.pravatar.cc/400?img=11",
+      "https://i.pravatar.cc/400?img=12"
+    ],
+    "location": {
+      "latitude": 41.051970000474405,
+      "longitude": 29.027768733043814,
+      "district": "Ortaköy",
+      "place_name": "Ortaköy Sahili"
+    },
+    "match_score": 0.92,
+    "distance_meters": 3407,
+    "last_active": "2026-01-30T00:14:20.539Z",
+    "is_online": true,
+    "profile_completion": 0.83,
+    "created_at": "2026-01-31T15:14:20.539Z"
+  },
+  {
+    "id": "fake_user_1769872460539_25",
+    "name": "Eren",
+    "age": 35,
+    "gender": "male",
+    "bio": "Mimarlık & sanat 🎨 Hafta sonu galeri gezmeye ne dersin?",
+    "interests": [
+      "Oyun",
+      "Gezi",
+      "Kahve"
+    ],
+    "photos": [
+      "https://i.pravatar.cc/400?img=41",
+      "https://i.pravatar.cc/400?img=42",
+      "https://i.pravatar.cc/400?img=43"
+    ],
+    "location": {
+      "latitude": 40.98845901592588,
+      "longitude": 29.029695259611255,
+      "district": "Moda",
+      "place_name": "Moda Sahili"
+    },
+    "match_score": 0.65,
+    "distance_meters": 428,
+    "last_active": "2026-01-29T23:14:20.539Z",
+    "is_online": false,
+    "profile_completion": 0.91,
+    "created_at": "2026-01-31T15:14:20.539Z"
+  },
+  {
+    "id": "fake_user_1769872460539_26",
+    "name": "Ebru",
+    "age": 32,
+    "gender": "female",
+    "bio": "Kedilere aşırı ilgi gösteriyorsam özür dilerim 🐱",
+    "interests": [
+      "Bisiklet",
+      "Teknoloji",
+      "Yürüyüş",
+      "Festival",
+      "Kahve"
+    ],
+    "photos": [
+      "https://i.pravatar.cc/400?img=6",
+      "https://i.pravatar.cc/400?img=7",
+      "https://i.pravatar.cc/400?img=8"
+    ],
+    "location": {
+      "latitude": 40.98758987689587,
+      "longitude": 29.042025231851383,
+      "district": "Acıbadem",
+      "place_name": "Acıbadem Parkı"
+    },
+    "match_score": 0.81,
+    "distance_meters": 1797,
+    "last_active": "2026-01-29T20:14:20.539Z",
+    "is_online": false,
+    "profile_completion": 0.98,
+    "created_at": "2026-01-31T15:14:20.539Z"
+  },
+  {
+    "id": "fake_user_1769872460539_27",
+    "name": "Kaan",
+    "age": 30,
+    "gender": "male",
+    "bio": "Plansız gidilenler hep daha eğlenceli oluyor 🎉",
+    "interests": [
+      "Gastronomi",
+      "Kahve",
+      "Yoga"
+    ],
+    "photos": [
+      "https://i.pravatar.cc/400?img=34",
+      "https://i.pravatar.cc/400?img=35",
+      "https://i.pravatar.cc/400?img=36"
+    ],
+    "location": {
+      "latitude": 40.99319840184421,
+      "longitude": 29.02080341833883,
+      "district": "Kadıköy",
+      "place_name": "Kadıköy Çarşı"
+    },
+    "match_score": 0.7,
+    "distance_meters": 1354,
+    "last_active": "2026-01-30T17:14:20.539Z",
+    "is_online": true,
+    "profile_completion": 0.9,
+    "created_at": "2026-01-31T15:14:20.539Z"
+  },
+  {
+    "id": "fake_user_1769872460539_28",
+    "name": "Zeynep",
+    "age": 37,
+    "gender": "female",
+    "bio": "Hayat kısa, kahvesi uzun olsun ☕ Moda'da sunset?",
+    "interests": [
+      "Podcast",
+      "Gezi",
+      "Kahve",
+      "Müze",
+      "Bisiklet"
+    ],
+    "photos": [
+      "https://i.pravatar.cc/400?img=1",
+      "https://i.pravatar.cc/400?img=2",
+      "https://i.pravatar.cc/400?img=3"
+    ],
+    "location": {
+      "latitude": 41.02099943290681,
+      "longitude": 29.017662626125,
+      "district": "Üsküdar",
+      "place_name": "Kız Kulesi"
+    },
+    "match_score": 0.69,
+    "distance_meters": 1384,
+    "last_active": "2026-01-29T20:14:20.539Z",
+    "is_online": false,
+    "profile_completion": 0.84,
+    "created_at": "2026-01-31T15:14:20.539Z"
+  },
+  {
+    "id": "fake_user_1769872460539_29",
+    "name": "Eren",
+    "age": 31,
+    "gender": "male",
+    "bio": "Kötü şarkı sözlerini ezberleme yeteneğim var 🎤",
+    "interests": [
+      "Seyahat",
+      "Podcast",
+      "Gitar"
+    ],
+    "photos": [
+      "https://i.pravatar.cc/400?img=58",
+      "https://i.pravatar.cc/400?img=59",
+      "https://i.pravatar.cc/400?img=60"
+    ],
+    "location": {
+      "latitude": 40.991792123770715,
+      "longitude": 29.025125456432402,
+      "district": "Kadıköy",
+      "place_name": "Kadıköy Çarşı"
+    },
+    "match_score": 0.62,
+    "distance_meters": 2625,
+    "last_active": "2026-01-31T06:14:20.539Z",
+    "is_online": true,
+    "profile_completion": 0.76,
+    "created_at": "2026-01-31T15:14:20.539Z"
+  }
+]
