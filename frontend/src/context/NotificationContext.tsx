@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import type { ReactNode } from 'react';
+import { API_URL } from '../config/api';
 
 interface NotificationPermissionStatus {
     granted: boolean;
@@ -36,7 +37,7 @@ export const NotificationProvider: React.FC<{ children: ReactNode }> = ({ childr
         const userId = localStorage.getItem('userId');
         if (!userId) return;
         try {
-            const res = await fetch(`/api/notifications/preferences/${userId}`);
+            const res = await fetch(`${API_URL}/api/notifications/preferences/${userId}`);
             const data = await res.json();
             setPreferences(data.preferences);
         } catch (e) {
@@ -51,7 +52,7 @@ export const NotificationProvider: React.FC<{ children: ReactNode }> = ({ childr
         setPreferences((prev: any) => ({ ...prev, [key]: value }));
 
         try {
-            await fetch(`/api/notifications/preferences/${userId}`, {
+            await fetch(`${API_URL}/api/notifications/preferences/${userId}`, {
                 method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ [key]: value })
@@ -127,7 +128,7 @@ export const NotificationProvider: React.FC<{ children: ReactNode }> = ({ childr
             const userId = localStorage.getItem('userId');
             if (!userId) return;
 
-            await fetch('/api/notifications/subscribe', {
+            await fetch(`${API_URL}/api/notifications/subscribe`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

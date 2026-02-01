@@ -7,8 +7,11 @@ interface SelfDescriptionModalProps {
     onSave: (description: string) => void;
 }
 
+import { API_URL } from '../config/api';
+
 const SelfDescriptionModal: React.FC<SelfDescriptionModalProps> = ({ isOpen, onClose, onSave }) => {
     const [description, setDescription] = useState('');
+    const [loading, setLoading] = useState(false);
     const [examples] = useState([
         'Kırmızı şapka giyiyorum',
         'Siyah sırt çantalı',
@@ -19,9 +22,12 @@ const SelfDescriptionModal: React.FC<SelfDescriptionModalProps> = ({ isOpen, onC
     ]);
 
     const handleSave = async () => {
+        if (!description.trim()) return;
+
+        setLoading(true);
         try {
-            const userId = localStorage.getItem('userId') || 'user_default';
-            await fetch('/api/user/self-description', {
+            const userId = localStorage.getItem('userId');
+            await fetch(`${API_URL}/api/user/self-description`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

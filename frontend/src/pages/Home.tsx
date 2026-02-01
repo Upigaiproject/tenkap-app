@@ -1,10 +1,31 @@
 import { useState, useEffect } from 'react';
-import { MapPin, Coffee, ShoppingBag, TreePine, PartyPopper, Home as HomeIcon, LogOut, Dumbbell, User, Settings } from 'lucide-react';
+import {
+    MapPin,
+    Coffee,
+    ShoppingBag,
+    TreePine,
+    PartyPopper,
+    Home as HomeIcon,
+    LogOut,
+    Dumbbell,
+    User,
+    Settings,
+    MessageSquare,
+    Heart,
+    Bell,
+    CheckCircle,
+    Navigation,
+    Send
+} from 'lucide-react';
 import SelfDescriptionModal from '../components/SelfDescriptionModal';
 import NotificationSettings from '../components/NotificationSettings';
 import NotificationBell from '../components/NotificationBell';
 import ProximityDetector from '../components/ProximityDetector';
 import SuggestionsFeed from '../components/SuggestionsFeed';
+import { useWebSocket } from '../hooks/useWebSocket';
+import { API_URL } from '../config/api';
+
+import { NotificationProvider } from '../hooks/useNotifications';
 
 
 const CATEGORIES = [
@@ -15,8 +36,6 @@ const CATEGORIES = [
     { id: 'acik', icon: TreePine, label: 'Açık Alan', color: '#10B981' },
     { id: 'etkinlik', icon: PartyPopper, label: 'Etkinlik', color: '#8B5CF6' }
 ];
-
-import { NotificationProvider } from '../hooks/useNotifications';
 
 const Home = () => {
     const [activeCategory, setActiveCategory] = useState<string | null>(null);
@@ -97,7 +116,7 @@ const Home = () => {
             const userId = localStorage.getItem('userId');
             if (!userId) return;
 
-            await fetch('/api/tracking/log-coordinate', {
+            await fetch(`${API_URL} /api/tracking / log - coordinate`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -125,7 +144,7 @@ const Home = () => {
         try {
             const userId = localStorage.getItem('userId') || 'user_dev_123';
 
-            const response = await fetch('/api/checkin', {
+            const response = await fetch(`${API_URL} /api/checkin`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -154,7 +173,7 @@ const Home = () => {
     const handleCheckOut = async () => {
         try {
             const userId = localStorage.getItem('userId') || 'user_dev_123';
-            await fetch('/api/checkin/checkout', {
+            await fetch(`${API_URL} /api/checkin / checkout`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ userId })
@@ -299,7 +318,7 @@ const Home = () => {
                     )}
                     <div style={{ fontSize: '12px', color: userLocation ? '#10B981' : '#F59E0B', marginBottom: '10px', background: 'rgba(0,0,0,0.2)', padding: '5px', borderRadius: '4px' }}>
                         {userLocation
-                            ? `📍 Konum Hazır: ${userLocation.lat.toFixed(4)}, ${userLocation.lng.toFixed(4)}`
+                            ? `📍 Konum Hazır: ${userLocation.lat.toFixed(4)}, ${userLocation.lng.toFixed(4)} `
                             : '🔄 Konum Bekleniyor...'}
                     </div>
 
@@ -538,16 +557,16 @@ const Home = () => {
                 )}
 
                 <style>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
-        }
-        
-        @keyframes pulse {
-          0%, 100% { opacity: 1; transform: scale(1); }
-          50% { opacity: 0.5; transform: scale(1.2); }
-        }
-      `}</style>
+@keyframes float {
+    0 %, 100 % { transform: translateY(0px); }
+    50 % { transform: translateY(-20px); }
+}
+
+@keyframes pulse {
+    0 %, 100 % { opacity: 1; transform: scale(1); }
+    50 % { opacity: 0.5; transform: scale(1.2); }
+}
+`}</style>
                 <ProximityDetector />
             </div>
         </NotificationProvider >

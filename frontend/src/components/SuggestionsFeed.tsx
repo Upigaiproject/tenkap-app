@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Sparkles, RefreshCw } from 'lucide-react';
+import { Sparkles, RefreshCw, Loader } from 'lucide-react';
 import SuggestionCard from './SuggestionCard';
+import { API_URL } from '../config/api';
 
 interface SuggestionsFeedProps {
     userId: string;
@@ -14,7 +15,7 @@ const SuggestionsFeed: React.FC<SuggestionsFeedProps> = ({ userId }) => {
         setLoading(true);
         try {
             // In dev mode, we might want to trigger generation first if empty
-            const response = await fetch(`/api/suggestions/${userId}`);
+            const response = await fetch(`${API_URL}/api/suggestions/${userId}`);
             const data = await response.json();
 
             if (data.suggestions) {
@@ -31,7 +32,7 @@ const SuggestionsFeed: React.FC<SuggestionsFeedProps> = ({ userId }) => {
         setLoading(true);
         try {
             // Manually trigger generation for demo
-            await fetch('/api/suggestions/generate', {
+            await fetch(`${API_URL}/api/suggestions/generate`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

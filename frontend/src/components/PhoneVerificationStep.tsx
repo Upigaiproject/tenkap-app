@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Phone, Loader } from 'lucide-react';
+import { API_URL } from '../config/api';
 
 const PhoneVerificationStep: React.FC<{ onVerified: (phone: string) => void }> = ({ onVerified }) => {
     const [phoneNumber, setPhoneNumber] = useState('');
@@ -8,14 +9,12 @@ const PhoneVerificationStep: React.FC<{ onVerified: (phone: string) => void }> =
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 
-    const backendUrl = 'http://localhost:3002'; // Updated to 3002 to match server.js
-
     const handleSendCode = async () => {
         setLoading(true);
         setError('');
 
         try {
-            const response = await fetch(`${backendUrl}/api/sms/send-code`, {
+            const response = await fetch(`${API_URL}/api/sms/send-code`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ phoneNumber })
@@ -45,7 +44,7 @@ const PhoneVerificationStep: React.FC<{ onVerified: (phone: string) => void }> =
         setError('');
 
         try {
-            const response = await fetch(`${backendUrl}/api/sms/verify-code`, {
+            const response = await fetch(`${API_URL}/api/sms/verify-code`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ phoneNumber, code })
