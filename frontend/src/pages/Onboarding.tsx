@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Mail, ChevronRight, Loader } from 'lucide-react';
 import PhoneVerificationStep from '../components/PhoneVerificationStep';
+import { API_URL } from '../config/api';
 
 const Onboarding = ({ onComplete }: { onComplete: () => void }) => {
     const [step, setStep] = useState(1); // 1: Required, 2: Optional, 3: Permissions
@@ -24,8 +25,7 @@ const Onboarding = ({ onComplete }: { onComplete: () => void }) => {
     const handleRegister = async () => {
         setLoading(true);
         try {
-            const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3002';
-const response = await fetch(`${API_URL}/api/auth/register`, {
+            const response = await fetch(`${API_URL}/api/auth/register`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
