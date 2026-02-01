@@ -24,7 +24,8 @@ const Onboarding = ({ onComplete }: { onComplete: () => void }) => {
     const handleRegister = async () => {
         setLoading(true);
         try {
-            const response = await fetch('/api/auth/register', {
+            const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3002';
+const response = await fetch(`${API_URL}/api/auth/register`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
