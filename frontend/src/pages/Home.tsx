@@ -9,6 +9,7 @@ import SuggestionsFeed from '../components/SuggestionsFeed';
 import { API_URL } from '../config/api';
 import { NotificationProvider } from '../hooks/useNotifications';
 
+
 const CATEGORIES = [
     { id: 'mahalle', icon: HomeIcon, label: 'Mahallem', color: '#6366F1' },
     { id: 'kafe', icon: Coffee, label: 'Kafe/Restoran', color: '#F59E0B' },
@@ -184,7 +185,7 @@ const Home = () => {
                 }}>
                     <div>
                         <h1 style={{ fontSize: '24px', fontWeight: 800, margin: 0 }}>TENKAP</h1>
-                        <span style={{ fontSize: '10px', background: '#3B82F6', color: 'white', padding: '2px 4px', borderRadius: '4px' }}>v3.1 FINAL</span>
+                        <span style={{ fontSize: '10px', background: '#3B82F6', color: 'white', padding: '2px 4px', borderRadius: '4px' }}>v4.0 GOD MODE</span>
                     </div>
 
                     <div style={{ display: 'flex', gap: '10px' }}>
