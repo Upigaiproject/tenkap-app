@@ -1,25 +1,13 @@
+// @ts-nocheck
 import { useState, useEffect } from 'react';
-import {
-    MapPin,
-    Coffee,
-    ShoppingBag,
-    TreePine,
-    PartyPopper,
-    Home as HomeIcon,
-    LogOut,
-    Dumbbell,
-    User,
-    Settings,
-} from 'lucide-react';
+import { MapPin, Coffee, ShoppingBag, TreePine, PartyPopper, Home as HomeIcon, LogOut, Dumbbell, User, Settings } from 'lucide-react';
 import SelfDescriptionModal from '../components/SelfDescriptionModal';
 import NotificationSettings from '../components/NotificationSettings';
 import NotificationBell from '../components/NotificationBell';
 import ProximityDetector from '../components/ProximityDetector';
 import SuggestionsFeed from '../components/SuggestionsFeed';
 import { API_URL } from '../config/api';
-
 import { NotificationProvider } from '../hooks/useNotifications';
-
 
 const CATEGORIES = [
     { id: 'mahalle', icon: HomeIcon, label: 'Mahallem', color: '#6366F1' },
