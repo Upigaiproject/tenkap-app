@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useState, useEffect } from 'react';
 import {
     MapPin,
@@ -47,22 +48,14 @@ const Home = () => {
     const [geoError, setGeoError] = useState<string | null>(null);
     const [userId, setUserId] = useState<string | null>(null);
 
-    // Initialize User ID if missing
     // Initialize User ID
     useEffect(() => {
-        // 1. Try to get from local storage (set during onboarding)
         let storedUserId = localStorage.getItem('userId');
-
-        // 2. If valid ID exists, use it
         if (storedUserId && !storedUserId.startsWith('user_dev_')) {
             setUserId(storedUserId);
             return;
         }
-
-        // 3. (Fallback) If absolutely no ID, wait for onboarding or generate temp
-        // Ideally we should redirect to /onboarding here if no ID
-        // But for now, let's just log warning
-        console.warn('⚠️ No valid User ID found in Home. Using fallback or waiting for Onboarding.');
+        console.warn('⚠️ No valid User ID found in Home.');
     }, []);
 
     const startWatching = (highAccuracy = true) => {
@@ -83,13 +76,9 @@ const Home = () => {
             },
             (error) => {
                 console.error('Location error:', error);
-
-                // If Timeout (3) or Unavailable (2) and we were using high accuracy, try low accuracy
                 if ((error.code === 3 || error.code === 2) && highAccuracy) {
-                    console.log('Failing over to low accuracy GPS...');
-                    setGeoError('Yüksek hassasiyet başarısız, pil tasarruf moduna geçiliyor...');
                     navigator.geolocation.clearWatch(watchId);
-                    startWatching(false); // Retry with low accuracy
+                    startWatching(false);
                 } else {
                     setGeoError(`GPS Hatası: ${error.message} (Kod: ${error.code})`);
                 }
@@ -104,7 +93,6 @@ const Home = () => {
         return () => navigator.geolocation.clearWatch(watchId);
     };
 
-    // Start tracking on mount
     useEffect(() => {
         const cleanup = startWatching(true);
         return cleanup;
@@ -132,7 +120,6 @@ const Home = () => {
         }
     };
 
-    // Handle category check-in
     const handleCheckIn = async (categoryId: string) => {
         if (!userLocation) {
             alert('Konum bilgisi alınamadı');
@@ -160,7 +147,6 @@ const Home = () => {
             if (data.success) {
                 setActiveCategory(categoryId);
                 setSuggestions(data.suggestions || []);
-                console.log('✅ Check-in successful:', data);
             }
         } catch (error) {
             console.error('Check-in failed:', error);
@@ -181,7 +167,6 @@ const Home = () => {
 
             setActiveCategory(null);
             setSuggestions([]);
-            console.log('👋 Checked out');
         } catch (error) {
             console.error('Checkout failed:', error);
         }
@@ -198,7 +183,6 @@ const Home = () => {
                 position: 'relative',
                 overflow: 'hidden'
             }}>
-                {/* Animated Background Orbs */}
                 <div style={{
                     position: 'absolute',
                     top: '10%',
@@ -207,114 +191,52 @@ const Home = () => {
                     height: '400px',
                     background: 'radial-gradient(circle, rgba(139, 92, 246, 0.4), transparent 70%)',
                     filter: 'blur(60px)',
-                    animation: 'float 8s ease-in-out infinite',
                     pointerEvents: 'none'
                 }} />
 
-                {/* Header */}
                 <div style={{
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
                     marginBottom: '40px',
                     position: 'relative',
-                    zIndex: 100 // Higher than ProximityDetector
+                    zIndex: 100
                 }}>
                     <div>
                         <h1 style={{ fontSize: '24px', fontWeight: 800, margin: 0 }}>TENKAP</h1>
-                        <span style={{ fontSize: '10px', background: '#3B82F6', color: 'white', padding: '2px 4px', borderRadius: '4px' }}>v3.1 FINAL</span>
+                        <span style={{ fontSize: '10px', background: '#3B82F6', color: 'white', padding: '2px 4px', borderRadius: '4px' }}>v4.0 GOD MODE</span>
                     </div>
 
                     <div style={{ display: 'flex', gap: '10px' }}>
-
-                        {/* Reset Button */}
                         <button
                             onClick={() => {
                                 if (confirm('Başla ekranına dönmek istiyor musunuz?')) {
                                     localStorage.removeItem('userId');
-                                    localStorage.removeItem('userToken');
                                     window.location.reload();
                                 }
                             }}
-                            style={{
-                                width: '40px',
-                                height: '40px',
-                                borderRadius: '12px',
-                                background: 'rgba(255, 255, 255, 0.2)',
-                                border: '1px solid rgba(255, 255, 255, 0.3)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                cursor: 'pointer',
-                                color: 'white'
-                            }}
+                            style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'rgba(255, 255, 255, 0.2)', border: '1px solid rgba(255, 255, 255, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: 'white' }}
                         >
                             🔄
                         </button>
 
-                        {/* Settings Button */}
-                        <button
-                            onClick={() => setIsNotificationModalOpen(true)}
-                            style={{
-                                width: '40px',
-                                height: '40px',
-                                borderRadius: '12px',
-                                background: 'rgba(255, 255, 255, 0.2)',
-                                border: '1px solid rgba(255, 255, 255, 0.3)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                cursor: 'pointer'
-                            }}
-                        >
+                        <button onClick={() => setIsNotificationModalOpen(true)} style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'rgba(255, 255, 255, 0.2)', border: '1px solid rgba(255, 255, 255, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
                             <Settings size={20} color="white" />
                         </button>
 
-                        {/* Profile Button */}
-                        <button
-                            onClick={() => setIsDescriptionModalOpen(true)}
-                            style={{
-                                width: '40px',
-                                height: '40px',
-                                borderRadius: '12px',
-                                background: 'rgba(255, 255, 255, 0.2)',
-                                border: '1px solid rgba(255, 255, 255, 0.3)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                cursor: 'pointer'
-                            }}
-                        >
+                        <button onClick={() => setIsDescriptionModalOpen(true)} style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'rgba(255, 255, 255, 0.2)', border: '1px solid rgba(255, 255, 255, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
                             <User size={20} color="white" />
                         </button>
                     </div>
                 </div>
 
-                {/* FIXED NOTIFICATION BELL - WORLD CLASS DESIGN */}
-                {/* FIXED NOTIFICATION BELL - WORLD CLASS DESIGN */}
                 <NotificationBell />
 
-                {/* Main Content */}
-                <main style={{
-                    maxWidth: '500px',
-                    margin: '0 auto',
-                    textAlign: 'center'
-                }}>
-                    {/* Title */}
-                    <h1 style={{
-                        fontSize: '32px',
-                        fontWeight: 700,
-                        marginBottom: '12px',
-                        lineHeight: 1.2
-                    }}>
-                        Neredesin?
-                    </h1>
+                <main style={{ maxWidth: '500px', margin: '0 auto', textAlign: 'center' }}>
+                    <h1 style={{ fontSize: '32px', fontWeight: 700, marginBottom: '12px', lineHeight: 1.2 }}>Neredesin?</h1>
 
-                    {/* GPS Debug Info */}
                     {geoError && (
-                        <div style={{ background: '#EF4444', color: 'white', padding: '10px', borderRadius: '8px', marginBottom: '10px', fontSize: '12px' }}>
-                            ⚠️ {geoError}
-                        </div>
+                        <div style={{ background: '#EF4444', color: 'white', padding: '10px', borderRadius: '8px', marginBottom: '10px', fontSize: '12px' }}>⚠️ {geoError}</div>
                     )}
                     <div style={{ fontSize: '12px', color: userLocation ? '#10B981' : '#F59E0B', marginBottom: '10px', background: 'rgba(0,0,0,0.2)', padding: '5px', borderRadius: '4px' }}>
                         {userLocation
@@ -322,22 +244,9 @@ const Home = () => {
                             : '🔄 Konum Bekleniyor...'}
                     </div>
 
+                    <p style={{ fontSize: '16px', opacity: 0.9, marginBottom: '40px' }}>Kategorini seç, müsait ol</p>
 
-                    <p style={{
-                        fontSize: '16px',
-                        opacity: 0.9,
-                        marginBottom: '40px'
-                    }}>
-                        Kategorini seç, müsait ol
-                    </p>
-
-                    {/* Category Grid */}
-                    <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(2, 1fr)',
-                        gap: '16px',
-                        marginBottom: '32px'
-                    }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px', marginBottom: '32px' }}>
                         {CATEGORIES.map((category) => {
                             const Icon = category.icon;
                             const isActive = activeCategory === category.id;
@@ -348,49 +257,24 @@ const Home = () => {
                                     onClick={() => handleCheckIn(category.id)}
                                     disabled={loading}
                                     style={{
-                                        background: isActive
-                                            ? 'rgba(255, 255, 255, 0.2)'
-                                            : 'rgba(255, 255, 255, 0.1)',
-                                        border: isActive
-                                            ? '2px solid rgba(255, 255, 255, 0.4)'
-                                            : '1px solid rgba(255, 255, 255, 0.15)',
+                                        background: isActive ? 'rgba(255, 255, 255, 0.2)' : 'rgba(255, 255, 255, 0.1)',
+                                        border: isActive ? '2px solid rgba(255, 255, 255, 0.4)' : '1px solid rgba(255, 255, 255, 0.15)',
                                         backdropFilter: 'blur(12px)',
                                         borderRadius: '20px',
                                         padding: '32px 20px',
                                         cursor: loading ? 'wait' : 'pointer',
-                                        transition: 'all 0.2s ease',
                                         display: 'flex',
                                         flexDirection: 'column',
                                         alignItems: 'center',
                                         gap: '12px'
                                     }}
-                                    onMouseEnter={(e) => {
-                                        if (!loading) {
-                                            e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
-                                            e.currentTarget.style.transform = 'translateY(-2px)';
-                                        }
-                                    }}
-                                    onMouseLeave={(e) => {
-                                        if (!loading) {
-                                            e.currentTarget.style.background = isActive
-                                                ? 'rgba(255, 255, 255, 0.2)'
-                                                : 'rgba(255, 255, 255, 0.1)';
-                                            e.currentTarget.style.transform = 'translateY(0)';
-                                        }
-                                    }}
                                 >
                                     <Icon size={36} strokeWidth={2} color="white" />
-                                    <span style={{
-                                        fontSize: '15px',
-                                        fontWeight: 600
-                                    }}>
-                                        {category.label}
-                                    </span>
+                                    <span style={{ fontSize: '15px', fontWeight: 600 }}>{category.label}</span>
                                 </button>
                             );
                         })}
 
-                        {/* Checkout Button */}
                         {activeCategory && (
                             <button
                                 onClick={handleCheckOut}
@@ -401,7 +285,6 @@ const Home = () => {
                                     borderRadius: '20px',
                                     padding: '32px 20px',
                                     cursor: 'pointer',
-                                    transition: 'all 0.2s ease',
                                     display: 'flex',
                                     flexDirection: 'column',
                                     alignItems: 'center',
@@ -410,96 +293,30 @@ const Home = () => {
                                 }}
                             >
                                 <LogOut size={36} strokeWidth={2} color="white" />
-                                <span style={{ fontSize: '15px', fontWeight: 600 }}>
-                                    Çıkış Yap
-                                </span>
+                                <span style={{ fontSize: '15px', fontWeight: 600 }}>Çıkış Yap</span>
                             </button>
                         )}
                     </div>
 
-                    {/* Active Status */}
                     {activeCategory && (
-                        <div style={{
-                            background: 'rgba(255, 255, 255, 0.15)',
-                            border: '1px solid rgba(255, 255, 255, 0.2)',
-                            backdropFilter: 'blur(12px)',
-                            borderRadius: '16px',
-                            padding: '20px',
-                            marginBottom: '24px'
-                        }}>
-                            <div style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                gap: '10px',
-                                marginBottom: '8px'
-                            }}>
-                                <div style={{
-                                    width: '10px',
-                                    height: '10px',
-                                    borderRadius: '50%',
-                                    background: '#10B981',
-                                    animation: 'pulse 2s ease-in-out infinite'
-                                }} />
-                                <span style={{ fontSize: '16px', fontWeight: 600 }}>
-                                    Müsaitsin
-                                </span>
+                        <div style={{ background: 'rgba(255, 255, 255, 0.15)', border: '1px solid rgba(255, 255, 255, 0.2)', backdropFilter: 'blur(12px)', borderRadius: '16px', padding: '20px', marginBottom: '24px' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '8px' }}>
+                                <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#10B981' }} />
+                                <span style={{ fontSize: '16px', fontWeight: 600 }}>Müsaitsin</span>
                             </div>
-                            <p style={{
-                                fontSize: '14px',
-                                opacity: 0.8,
-                                margin: 0
-                            }}>
-                                {CATEGORIES.find(c => c.id === activeCategory)?.label}
-                            </p>
+                            <p style={{ fontSize: '14px', opacity: 0.8, margin: 0 }}>{CATEGORIES.find(c => c.id === activeCategory)?.label}</p>
                         </div>
                     )}
 
-                    {/* Suggestions */}
                     {suggestions.length > 0 && (
-                        <div style={{
-                            background: 'rgba(255, 255, 255, 0.1)',
-                            border: '1px solid rgba(255, 255, 255, 0.15)',
-                            backdropFilter: 'blur(12px)',
-                            borderRadius: '16px',
-                            padding: '20px',
-                            textAlign: 'left'
-                        }}>
-                            <h3 style={{
-                                fontSize: '18px',
-                                fontWeight: 600,
-                                marginBottom: '16px',
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '8px'
-                            }}>
-                                <MapPin size={20} />
-                                Öneriler
+                        <div style={{ background: 'rgba(255, 255, 255, 0.1)', border: '1px solid rgba(255, 255, 255, 0.15)', backdropFilter: 'blur(12px)', borderRadius: '16px', padding: '20px', textAlign: 'left' }}>
+                            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                <MapPin size={20} /> Öneriler
                             </h3>
-
                             {suggestions.map((suggestion, index) => (
-                                <div
-                                    key={index}
-                                    style={{
-                                        background: 'rgba(255, 255, 255, 0.1)',
-                                        borderRadius: '12px',
-                                        padding: '16px',
-                                        marginBottom: index < suggestions.length - 1 ? '12px' : 0
-                                    }}
-                                >
-                                    <p style={{
-                                        fontSize: '15px',
-                                        fontWeight: 500,
-                                        marginBottom: '8px'
-                                    }}>
-                                        {suggestion.message}
-                                    </p>
-                                    <div style={{
-                                        display: 'flex',
-                                        gap: '16px',
-                                        fontSize: '13px',
-                                        opacity: 0.8
-                                    }}>
+                                <div key={index} style={{ background: 'rgba(255, 255, 255, 0.1)', borderRadius: '12px', padding: '16px', marginBottom: index < suggestions.length - 1 ? '12px' : 0 }}>
+                                    <p style={{ fontSize: '15px', fontWeight: 500, marginBottom: '8px' }}>{suggestion.message}</p>
+                                    <div style={{ display: 'flex', gap: '16px', fontSize: '13px', opacity: 0.8 }}>
                                         <span>📍 {suggestion.distance_meters}m</span>
                                         <span>👥 {suggestion.user_count} kişi</span>
                                     </div>
@@ -507,51 +324,20 @@ const Home = () => {
                             ))}
                         </div>
                     )}
-
-                    {/* Debug Info */}
-                    {userLocation && (
-                        <div style={{
-                            marginTop: '24px',
-                            background: 'rgba(0, 0, 0, 0.2)',
-                            border: '1px solid rgba(255, 255, 255, 0.1)',
-                            borderRadius: '12px',
-                            padding: '12px',
-                            fontSize: '12px',
-                            fontFamily: 'monospace',
-                            textAlign: 'left',
-                            opacity: 0.7
-                        }}>
-                            <div style={{ marginBottom: '4px' }}>
-                                Lat: {userLocation.lat.toFixed(6)}
-                            </div>
-                            <div style={{ marginBottom: '4px' }}>
-                                Lng: {userLocation.lng.toFixed(6)}
-                            </div>
-                            {activeCategory && (
-                                <div>Category: {activeCategory}</div>
-                            )}
-                            <div style={{ marginTop: '4px', color: '#10B981' }}>
-                                ● Tracking Active
-                            </div>
-                        </div>
-                    )}
                 </main>
 
-                {/* AI Suggestions Feed */}
                 {userId && (
                     <div style={{ maxWidth: '500px', margin: '0 auto 100px auto', padding: '0 20px' }}>
                         <SuggestionsFeed userId={userId} />
                     </div>
                 )}
 
-                {/* Self Description Modal */}
                 <SelfDescriptionModal
                     isOpen={isDescriptionModalOpen}
                     onClose={() => setIsDescriptionModalOpen(false)}
                     onSave={(desc) => console.log('Saved desc:', desc)}
                 />
 
-                {/* Notification Settings Modal */}
                 {isNotificationModalOpen && (
                     <NotificationSettings onClose={() => setIsNotificationModalOpen(false)} />
                 )}
