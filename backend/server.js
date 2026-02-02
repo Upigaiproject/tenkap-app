@@ -14,10 +14,12 @@ dotenv.config();
 const app = express();
 const server = http.createServer(app);
 
-// SİHİRLİ BÖLÜM: BURASI HERKESİ KABUL EDER
+// SİHİRLİ BÖLÜM: SADECE VERCEL İÇİN İZİN
+const allowedOrigin = process.env.FRONTEND_URL || "https://tenkap-app.vercel.app";
+
 const io = new Server(server, {
   cors: {
-    origin: true,
+    origin: allowedOrigin,
     methods: ["GET", "POST"],
     credentials: true
   }
@@ -25,7 +27,7 @@ const io = new Server(server, {
 
 // Middleware
 app.use(cors({
-  origin: true,
+  origin: allowedOrigin,
   credentials: true
 }));
 
