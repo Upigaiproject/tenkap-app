@@ -15,7 +15,9 @@ const app = express();
 const server = http.createServer(app);
 
 // SİHİRLİ BÖLÜM: SADECE VERCEL İÇİN İZİN
-const allowedOrigin = process.env.FRONTEND_URL || "https://tenkap-app.vercel.app";
+// Trailing slash temizliği yapıyoruz (https://site.com/ -> https://site.com)
+const rawOrigin = process.env.FRONTEND_URL || "https://tenkap-app.vercel.app";
+const allowedOrigin = rawOrigin.replace(/\/$/, "");
 
 const io = new Server(server, {
   cors: {
